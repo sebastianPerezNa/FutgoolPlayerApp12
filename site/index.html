@@ -188,7 +188,7 @@
                 <div class="col-xl-6">
                   <div class="swiper-slide-caption">
                     <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Unete a la nueva comunidad de Futbol</h1>
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200"></h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Registrarse</a>
+                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200"></h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Leer mas</a>
                   </div>
                 </div>
               </div>
@@ -200,7 +200,7 @@
                 <div class="col-xl-5">
                   <div class="swiper-slide-caption">
                     <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Crea nuevos equipos </h1>
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200">Busca jugadores para tus equipos</h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Equipos</a>
+                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200">Busca jugadores para tus equipos</h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Leer mas</a>
                   </div>
                 </div>
               </div>
@@ -212,7 +212,7 @@
                 <div class="col-xl-5">
                   <div class="swiper-slide-caption">
                     <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Unete y crea tus campeonatos </h1>
-                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200">Controla tus resultados  <br class="d-none d-xl-block"> </h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Campeonatos</a>
+                    <h4 data-caption-animate="fadeInUp" data-caption-delay="200">Controla tus resultados  <br class="d-none d-xl-block"> </h4><a class="button button-primary" data-caption-animate="fadeInUp" data-caption-delay="300" href="about-us.html">Leer mas</a>
                   </div>
                 </div>
               </div>
@@ -428,6 +428,8 @@
                       </article>
                     </div>
                     <div class="col-md-12">
+                    
+                      
                       <!-- Sección de Próximamente: Torneos de Videojuegos de Fútbol -->
                       <article class="post-future post-future-horizontal">
                         <a class="post-future-figure" href="#"><img src="images/videojuegos.jpg" alt="" width="370" height="325" /></a>
@@ -452,43 +454,165 @@
                     <!-- Swiper-->
                     <div class="swiper-container swiper-slider post-slider" data-loop="false" data-autoplay="false" data-simulate-touch="false">
                       <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                          <div class="swiper-slide-caption">
-                                                <!-- Post Alice-->
-                                                <article class="post-alice"><img src="images/post-slide-1-769x397.jpg" alt="" width="769" height="397"/>
-                                                  <div class="post-alice-main">
-                                                    <!-- Badge-->
-                                                    <div class="badge badge-secondary">the team
-                                                    </div>
-                                                    <h3 class="post-alice-title"><a href="#">Lewis named AIG MCAA 
-Sevens head coach</a></h3>
-                                                    <div class="divider"></div>
-                                                    <div class="post-alice-time"><span class="icon mdi mdi-clock"></span>
-                                                      <time datetime="2020">April 15, 2020</time>
-                                                    </div>
-                                                  </div>
-                                                </article>
+                          <div class="swiper-slide">
+                              <div class="swiper-slide-caption">
+                                  <!-- Post Alice - Sigue tus estadísticas -->
+                                  <!-- HTML del botón y el formulario oculto -->
+                                  <article class="post-alice">
+                                      <img src="images/alex.jpg" alt="" width="769" height="397" />
+                                      <div class="post-alice-main">
+                                          <!-- Badge -->
+                                          <h3 class="post-alice-title">Sigue las estadisticas de tus jugadas </h3>
+                                          
+                                          <a href="#" class="button button-primary" id="showFormButton">Registrarse</a>
+                                      </div>
+                                  </article>
+                  
+                                  <div id="registrationForm" class="popup-form">
+                                      <form>
+                                          <label for="nombreJugador">Nombre de jugador:</label>
+                                          <input type="text" id="nombreJugador" name="nombreJugador" required>
+                  
+                                          <label for="nombreEquipo">Nombre de equipo:</label>
+                                          <input type="text" id="nombreEquipo" name="nombreEquipo" required>
+                  
+                                          <label for="posicion">Posición:</label>
+                                          <input type="text" id="posicion" name="posicion" required>
+                  
+                                          <button type="submit">Enviar</button>
+                                      </form>
+                                  </div>
+                  
+                                  <!-- Mensaje emergente -->
+                                  <div id="successMessage" class="popup-success-message">
+                                      Jugador registrado con éxito
+                                  </div>
+                  
+                                  <!-- CSS para ocultar el formulario y el mensaje emergente -->
+                                  <style>
+                                      .popup-form, .popup-success-message {
+                                          display: none;
+                                          position: fixed;
+                                          top: 50%;
+                                          left: 50%;
+                                          transform: translate(-50%, -50%);
+                                          background: #fff;
+                                          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                                          border-radius: 8px;
+                                          padding: 20px;
+                                          z-index: 999;
+                                          max-width: 400px;
+                                          width: 100%;
+                                          text-align: center;
+                                      }
+                  
+                                      .popup-form label {
+                                          display: block;
+                                          margin-top: 10px;
+                                          font-weight: bold;
+                                      }
+                  
+                                      .popup-form input[type="text"] {
+                                          width: 100%;
+                                          padding: 8px;
+                                          margin-top: 5px;
+                                          border: 1px solid #ccc;
+                                          border-radius: 4px;
+                                      }
+                  
+                                      .popup-form button {
+                                          margin-top: 15px;
+                                          background-color: #007bff;
+                                          color: #fff;
+                                          padding: 10px 20px;
+                                          border: none;
+                                          border-radius: 4px;
+                                          cursor: pointer;
+                                          font-weight: bold;
+                                      }
+                  
+                                      .popup-form button:hover {
+                                          background-color: #0056b3;
+                                      }
+                  
+                                      .popup-success-message {
+                                          background: #007bff;
+                                          color: #fff;
+                                          font-weight: bold;
+                                      }
+                                  </style>
+                  
+                                  <!-- JavaScript para mostrar/ocultar el formulario y el mensaje emergente -->
+<script>
+  document.getElementById('showFormButton').addEventListener('click', function (e) {
+      e.preventDefault(); // Prevenir la acción predeterminada del enlace
+      document.getElementById('registrationForm').style.display = 'block';
+  });
+
+  document.getElementById('registrationForm').addEventListener('click', function (e) {
+      if (e.target === this) {
+          this.style.display = 'none';
+      }
+  });
+
+  // Agregar un evento de envío de formulario
+  document.querySelector('#registrationForm form').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevenir el envío del formulario
+
+      // Ocultar el formulario
+      document.getElementById('registrationForm').style.display = 'none';
+
+      // Mostrar el mensaje emergente
+      var successMessage = document.getElementById('successMessage');
+      successMessage.style.display = 'block';
+
+      // Desvanecer el mensaje después de 3 segundos
+      setTimeout(function () {
+          successMessage.style.display = 'none';
+      }, 3000);
+  });
+</script>
+
+                  
+
+                             
                           </div>
                         </div>
                         <div class="swiper-slide">
                           <div class="swiper-slide-caption">
-                                                <!-- Post Alice-->
-                                                <article class="post-alice"><img src="images/post-slide-2-769x397.jpg" alt="" width="769" height="397"/>
-                                                  <div class="post-alice-main">
-                                                    <!-- Badge-->
-                                                    <div class="badge badge-primary">The League
-                                                    </div>
-                                                    <h3 class="post-alice-title"><a href="#">rumors about world soccer championship 2020</a></h3>
-                                                    <div class="divider"></div>
-                                                    <div class="post-alice-time"><span class="icon mdi mdi-clock"></span>
-                                                      <time datetime="2020">April 15, 2020</time>
-                                                    </div>
-                                                  </div>
-                                                </article>
+                            <div class="swiper-slide">
+                              <div class="swiper-slide-caption">
+                                  <!-- Post Alice - Carrusel de Noticias -->
+                                  <article class="post-alice">
+                                      <img src="images/real.jpg" alt="" width="769" height="397" />
+                                      <div class="post-alice-main">
+                                          <!-- Badge -->
+                                          
+                                          <h3 class="post-alice-title"><a href="#">Inscribe tu equipo y llevalo a lo mas alto</a></h3>
+                                          <div class="divider"></div>
+                                          
+                                          <a  class="button button-primary" id="showFormButton">Inscribir Equipo</a>
+                                      </div>
+                                  </article>
+                              </div>
                           </div>
-                        </div>
-                        <div class="swiper-slide">
-                          <div class="swiper-slide-caption">
+                          
+                          <!-- Formulario de Inscripción de Equipos (oculto inicialmente) -->
+                          <div id="registrationForm" class="popup-form">
+                              <form>
+                                  <label for="nombreEquipo">Nombre de equipo:</label>
+                                  <input type="text" id="nombreEquipo" name="nombreEquipo" required>
+                          
+                                  <label for="nombreCapitan">Nombre de Capitán:</label>
+                                  <input type="text" id="nombreCapitan" name="nombreCapitan" required>
+                          
+                                  <label for="canchaLocal">Cancha de local (Opcional):</label>
+                                  <input type="text" id="canchaLocal" name="canchaLocal">
+                          
+                                  <button type="submit">Inscribir Equipo</button>
+                              </form>
+                          </div>
+                          
                                                 <!-- Post Alice-->
                                                 <article class="post-alice"><img src="images/post-slide-3-769x397.jpg" alt="" width="769" height="397"/>
                                                   <div class="post-alice-main">
@@ -512,20 +636,20 @@ Sevens head coach</a></h3>
                   </div>
                   <div class="col-md-12">
                     <!-- Post Future-->
-                    <article class="post-future post-future-horizontal"><a class="post-future-figure" href="#"><img src="images/news-3-3-370x325.jpg" alt="" width="370" height="325"/></a>
+                    <article class="post-future post-future-horizontal"><a class="post-future-figure" href="#"><img src="images/milan3.jpg" alt="" width="370" height="325"/></a>
                       <div class="post-future-main">
-                        <h4 class="post-future-title"><a href="#">Zidane: “We’re not going to change the way we play at the Calderón”</a></h4>
+                        <h4 class="post-future-title"><a href="#">Organiza Tus partidos amistosos contra los mejores rivales </a></h4>
                         <div class="post-future-meta">
                           <!-- Badge-->
-                          <div class="badge badge-red">hot<span class="icon mdi mdi-fire"></span>
+                          <div class="badge badge-red">Proximamente <span class="icon mdi mdi-fire"></span>
                           </div>
                           <div class="post-future-time"><span class="icon mdi mdi-clock"></span>
-                            <time datetime="2020">April 15, 2020</time>
+                            <time datetime="2020">Noviembre 10, 2023</time>
                           </div>
                         </div>
                         <hr/>
                         <div class="post-future-text">
-                          <p>Zidane spoke to the media at the Real Madrid City. The Whites coach explained how the team is going in to the second leg of the Champions...</p>
+                          <p>"Prepara emocionantes encuentros amistosos con los oponentes más competentes y disfruta de partidos inolvidables."</p>
                         </div>
                       </div>
                     </article>
@@ -1000,37 +1124,7 @@ Sevens head coach</a></h3>
                   </div>
                 </div>
                 <div class="aside-component">
-                  <!-- Heading Component-->
-                  <article class="heading-component">
-                    <div class="heading-component-inner">
-                      <h5 class="heading-component-title">Galeria
-                      </h5>
-                    </div>
-                  </article>
-                  <article class="gallery" data-lightgallery="group">
-                    <div class="row row-10 row-narrow">
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-1-original.jpg"><img src="images/gallery-soccer-1-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-2-original.jpg"><img src="images/gallery-soccer-2-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-3-original.jpg"><img src="images/gallery-soccer-3-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-4-original.jpg"><img src="images/gallery-soccer-4-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-5-original.jpg"><img src="images/gallery-soccer-5-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                      <div class="col-6 col-sm-4 col-md-6 col-lg-4"><a class="thumbnail-creative" data-lightgallery="item" href="images/gallery-soccer-6-original.jpg"><img src="images/gallery-soccer-6-212x212.jpg" alt=""/>
-                          <div class="thumbnail-creative-overlay"></div></a>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-                <div class="aside-component">
+                 
                  <!-- Heading Component-->
 <article class="heading-component">
   <div class="heading-component-inner">
@@ -1309,7 +1403,7 @@ Sevens head coach</a></h3>
                     <!-- Heading Component-->
                     <article class="heading-component">
                       <div class="heading-component-inner">
-                        <h5 class="heading-component-title">Shop
+                        <h5 class="heading-component-title">Tienda
                         </h5>
                         <div class="owl-carousel-arrows-outline">
                           <div class="owl-nav">
@@ -1324,9 +1418,9 @@ Sevens head coach</a></h3>
                       <article class="product">
                         <header class="product-header">
                           <!-- Badge-->
-                          <div class="badge badge-red">hot<span class="icon material-icons-whatshot"></span>
+                          <div class="badge badge-red">Popular <span class="icon material-icons-whatshot"></span>
                           </div>
-                          <div class="product-figure"><img src="images/shop/product-1.png" alt=""/></div>
+                          <div class="product-figure"><img src="images/nike1.jpg" alt=""/></div>
                           <div class="product-buttons">
                             <div class="product-button product-button-share fl-bigmug-line-share27" style="font-size: 22px">
                               <ul class="product-share">
@@ -1341,7 +1435,7 @@ Sevens head coach</a></h3>
                         </header>
                         <footer class="product-content">
                           <h6 class="product-title"><a href="#">Nike hoops elite backpack</a></h6>
-                          <div class="product-price"><span class="product-price-old">$400</span><span class="heading-6 product-price-new">$290</span>
+                          <div class="product-price"><span class="product-price-old">$80.000</span><span class="heading-6 product-price-new">$290</span>
                           </div>
                           <ul class="product-rating">
                             <li><span class="material-icons-star"></span></li>
@@ -1357,7 +1451,7 @@ Sevens head coach</a></h3>
                           <!-- Badge-->
                           <div class="badge badge-shop">new
                           </div>
-                          <div class="product-figure"><img src="images/shop/product-2.png" alt=""/></div>
+                          <div class="product-figure"><img src="images/nike2.jpg" alt=""/></div>
                           <div class="product-buttons">
                             <div class="product-button product-button-share fl-bigmug-line-share27" style="font-size: 22px">
                               <ul class="product-share">
@@ -1372,7 +1466,7 @@ Sevens head coach</a></h3>
                         </header>
                         <footer class="product-content">
                           <h6 class="product-title"><a href="#">Nike Air Zoom Pegasus</a></h6>
-                          <div class="product-price"><span class="heading-6 product-price-new">$290</span>
+                          <div class="product-price"><span class="heading-6 product-price-new">$99.000</span>
                           </div>
                           <ul class="product-rating">
                             <li><span class="material-icons-star"></span></li>
@@ -1386,13 +1480,13 @@ Sevens head coach</a></h3>
                       <article class="product">
                         <header class="product-header">
                           <!-- Badge-->
-                          <div class="badge badge-red">hot<span class="icon material-icons-whatshot"></span>
+                          <div class="badge badge-red">Popular<span class="icon material-icons-whatshot"></span>
                           </div>
-                          <div class="product-figure"><img src="images/shop/product-3.png" alt=""/></div>
+                          <div class="product-figure"><img src="images/nike3.jpg" alt=""/></div>
                           <div class="product-buttons">
                             <div class="product-button product-button-share fl-bigmug-line-share27" style="font-size: 22px">
                               <ul class="product-share">
-                                <li class="product-share-item"><span>Share</span></li>
+                                <li class="product-share-item"><span>Compartir</span></li>
                                 <li class="product-share-item"><a class="icon fa fa-facebook" href="#"></a></li>
                                 <li class="product-share-item"><a class="icon fa fa-instagram" href="#"></a></li>
                                 <li class="product-share-item"><a class="icon fa fa-twitter" href="#"></a></li>
@@ -1402,8 +1496,8 @@ Sevens head coach</a></h3>
                           </div>
                         </header>
                         <footer class="product-content">
-                          <h6 class="product-title"><a href="#">Nike distressed baseball hat</a></h6>
-                          <div class="product-price"><span class="product-price-old">$400</span><span class="heading-6 product-price-new">$290</span>
+                          <h6 class="product-title"><a href="#">Gorro Nike Dri-FIT Aerobill Featherlight </a></h6>
+                          <div class="product-price"><span class="product-price-old">$30.000</span><span class="heading-6 product-price-new">$290</span>
                           </div>
                           <ul class="product-rating">
                             <li><span class="material-icons-star"></span></li>

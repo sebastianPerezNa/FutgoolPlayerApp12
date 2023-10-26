@@ -1929,3 +1929,65 @@
 		// {DEL}
 	});
 }());
+const { MongoClient } = require("mongodb");
+
+// Cadena de conexión proporcionada por MongoDB Atlas
+const uri = "mongodb+srv://sebaperezn:<futgool>@cluster0.um89e58.mongodb.net";
+
+// Crear un cliente de MongoDB
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+async function main() {
+  try {
+    // Conectar al servidor de MongoDB
+    await client.connect();
+    console.log("Conectado a MongoDB");
+
+    // Selecciona la base de datos que deseas utilizar
+    const database = client.db("Futgool Player");
+
+    // Realiza operaciones en la base de datos aquí
+    // Por ejemplo, puedes hacer consultas, inserciones, actualizaciones, etc.
+
+  } finally {
+    // Cierra la conexión al finalizar
+    await client.close();
+  }
+}
+
+main().catch(console.error);
+
+document.getElementById("registrationForm").addEventListener("submit", async (e) => {
+	e.preventDefault(); // Evita que el formulario se envíe de manera predeterminada
+  
+	const nombreJugador = document.getElementById("nombreJugador").value;
+	const nombreEquipo = document.getElementById("nombreEquipo").value;
+	const posicion = document.getElementById("posicion").value;
+  
+	// Tu código de conexión a MongoDB
+  
+	try {
+	  await client.connect();
+	  const database = client.db("nombre_de_la_base_de_datos");
+	  const collection = database.collection("nombre_de_la_coleccion");
+  
+	  // Insertar datos en la colección
+	  const resultado = await collection.insertOne({
+		nombreJugador,
+		nombreEquipo,
+		posicion,
+	  });
+  
+	  console.log("Registro insertado con éxito:", resultado);
+	  alert("Inscripción exitosa");
+	} catch (error) {
+	  console.error("Error al insertar registro:", error);
+	  alert("Error en la inscripción");
+	} finally {
+	  await client.close();
+	}
+  });
+  
